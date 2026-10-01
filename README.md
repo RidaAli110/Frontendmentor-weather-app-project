@@ -35,6 +35,7 @@ Your users should be able to:
 Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design.
 
 **In your download:**
+
 - Mobile and desktop designs (JPG format)
 - All required assets in the `/assets` folder
 - Variable and static font files (or link to Google Fonts)
@@ -63,7 +64,7 @@ We've included two files to help you if you're using AI coding assistants (like 
 
 **How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+**Note:** These files are designed to help you _learn_, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
 
 ## Building your project
 
