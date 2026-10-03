@@ -3,17 +3,25 @@
 @import 'tailwindcss';
 
 :root {
+  --bricolage-font: 'Bricolage Grotesque', sans-serif;
   --bg: hsl(243, 96%, 9%);
   --btn-card-bg: hsl(243, 27%, 20%);
   --text-white: hsl(0, 0%, 100%);
   --text-grey: hsl(240, 6%, 70%);
+  --light-text: hsl(250, 6%, 84%);
   --hover-btn: hsl(243, 23%, 30%);
   --unit-border: hsl(243, 23%, 30%);
-  --bricolage-font: 'Bricolage Grotesque', sans-serif;
+  --search-btn: hsl(233, 67%, 56%);
+  --search-hover: hsl(248, 70%, 36%);
 }
+
 :focus-visible {
   outline: 1px solid var(--text-white);
   outline-offset: 2px;
+}
+
+.search-input:focus-visible {
+  outline: none;
 }
 
 body {
