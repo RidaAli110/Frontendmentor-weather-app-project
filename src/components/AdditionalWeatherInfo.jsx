@@ -2,9 +2,9 @@ import AdditionalWeatherCard from './AdditionalWeatherCard';
 
 export default function AdditionalWeatherInfo() {
   return (
-    <section className='  mt-4 lg:mt-5 '>
+    <section className='  mt-4 lg:mt-8 '>
       <dl
-        className='grid grid-cols-2 lg:grid-cols-[repeat(4,12rem)]
+        className='grid grid-cols-2 lg:grid-cols-4
       gap-4 lg:gap-3'
       >
         <AdditionalWeatherCard text='Feels Like' number='18°' />

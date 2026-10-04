@@ -3,7 +3,7 @@ import searchIcon from '../assets/images/icon-search.svg';
 export default function Input() {
   return (
     <form
-      className='flex flex-col min-[30rem]:flex-row justify-center gap-2.5  mt-8
+      className='flex flex-col min-[30rem]:flex-row justify-center gap-2.5  mt-10
       '
     >
       <div

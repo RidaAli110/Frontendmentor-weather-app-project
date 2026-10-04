@@ -13,6 +13,7 @@
   --unit-border: hsl(243, 23%, 30%);
   --search-btn: hsl(233, 67%, 56%);
   --search-hover: hsl(248, 70%, 36%);
+  --light-grey-card-bg: hsl(243, 23%, 24%);
 }
 
 :focus-visible {
@@ -27,4 +28,8 @@
 body {
   background-color: var(--bg);
   font-family: 'DM Sans', sans-serif;
+}
+
+button, input {
+  cursor: pointer;
 }

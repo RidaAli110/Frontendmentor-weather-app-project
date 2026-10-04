@@ -24,7 +24,7 @@ export default function TodayCard() {
         </div>
         <div className='flex items-center gap-8 mt-4 '>
           <img
-            className='w-30 h-30'
+            className='w-30'
             src={sunIcon}
             alt='sunny' /* change this dynamically later */
           />
