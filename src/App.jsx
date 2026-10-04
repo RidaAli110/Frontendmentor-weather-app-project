@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Input from './components/Input';
 import TodayCard from './components/TodayCard';
 import AdditionalWeatherInfo from './components/AdditionalWeatherInfo';
+import DailyForecast from './components/DailyForecast';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Input />
         <TodayCard />
         <AdditionalWeatherInfo />
+        <DailyForecast />
       </main>
     </div>
   );
