@@ -25,7 +25,7 @@ export default function HourlyForecast() {
   }, [isOpen]);
 
   return (
-    <section className=' p-5 mt-8 bg-(--btn-card-bg) rounded-2xl'>
+    <section className=' p-5  bg-(--btn-card-bg) rounded-2xl'>
       <div className='flex justify-between'>
         <h5 className='text-(--text-white) text-2xl font-medium'>
           Hourly forecast
@@ -42,7 +42,7 @@ export default function HourlyForecast() {
           {isOpen && <DaysMenu />}
         </div>
       </div>
-      <div className='grid md:grid-cols-2 lg:grid-cols-1 gap-5 mt-5'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-1 gap-4 mt-5'>
         <HourlyForecastCard img={sunIcon} time={'3pm'} temp={'20'} />
         <HourlyForecastCard img={sunIcon} time={'4pm'} temp={'20'} />
         <HourlyForecastCard img={sunIcon} time={'pm'} temp={'20'} />

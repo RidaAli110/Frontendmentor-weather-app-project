@@ -3,7 +3,7 @@ import mobileCard from '../assets/images/bg-today-small.svg';
 import sunIcon from '../assets/images/icon-sunny.webp';
 export default function TodayCard() {
   return (
-    <section className='relative w-full lg:w-fit  mt-5 lg:mt-10 '>
+    <section className='relative w-full lg:w-fit'>
       <picture className='block'>
         <source media='(min-width: 40rem)' srcSet={desktopCard} />
         <img
