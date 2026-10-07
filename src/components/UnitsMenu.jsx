@@ -3,7 +3,7 @@ import { UnitButton, Divider } from './UnitButton';
 export default function UnitsMenu() {
   return (
     <div
-      className='absolute top-full right-0 mt-2 z-1 flex flex-col  items-start 
+      className='absolute top-full right-0 mt-2 z-2 flex flex-col  items-start 
       gap-1 p-1.5 rounded-md bg-(--btn-card-bg) w-44  '
     >
       <button
