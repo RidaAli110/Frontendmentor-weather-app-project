@@ -1,8 +1,17 @@
-export default function DaysMenuButton({ children }) {
+export default function DaysMenuButton({
+  children,
+  setSelectedDay,
+  selectedDay,
+  setIsOpen,
+}) {
   return (
     <button
-      className=' w-full px-1 py-1.5 text-(--light-text) text-start font-medium
-       hover:bg-(--hover-btn) rounded-md '
+      onClick={() => {
+        setSelectedDay(children);
+        setIsOpen(false);
+      }}
+      className={`w-full p-1 text-(--light-text) text-start font-medium
+       hover:bg-(--hover-btn) rounded-sm ${selectedDay === children ? 'bg-(--hover-btn)' : ''} `}
     >
       {children}
     </button>
