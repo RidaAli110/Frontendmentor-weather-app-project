@@ -42,12 +42,12 @@ export default function getWeatherCodeIcon(code) {
   const description = weatherDescriptions[code];
   switch (code) {
     case 0:
-    case 1:
       return {
         image: sunIcon,
         description: description,
       };
 
+    case 1:
     case 2:
       return {
         image: partlyCloudyIcon,
@@ -111,7 +111,7 @@ export default function getWeatherCodeIcon(code) {
       };
 
     default:
-        return {
+      return {
         image: sunIcon,
         description: 'Weather information is unavailable',
       };
