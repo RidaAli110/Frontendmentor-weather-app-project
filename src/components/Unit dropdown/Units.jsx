@@ -3,7 +3,7 @@ import unitLogo from '../../assets/images/icon-units.svg';
 import dropdown from '../../assets/images/icon-dropdown.svg';
 import UnitsMenu from './UnitsMenu';
 
-export default function Units() {
+export default function Units({units, setUnits}) {
   const [isOpen, setIsOpen] = useState(false);
 
   // This is for closing the menu when clicking anywhere else outside
@@ -34,7 +34,7 @@ export default function Units() {
         Units
         <img src={dropdown} alt='' />
       </button>
-      {isOpen && <UnitsMenu />}
+      {isOpen && <UnitsMenu units={units} setUnits={setUnits} />}
     </div>
   );
 }
