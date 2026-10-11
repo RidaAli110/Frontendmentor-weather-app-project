@@ -1,7 +1,7 @@
-import unitLogo from '../assets/images/icon-units.svg';
-import dropdown from '../assets/images/icon-dropdown.svg';
-import UnitsMenu from './UnitsMenu';
 import { useEffect, useRef, useState } from 'react';
+import unitLogo from '../../assets/images/icon-units.svg';
+import dropdown from '../../assets/images/icon-dropdown.svg';
+import UnitsMenu from './UnitsMenu';
 
 export default function Units() {
   const [isOpen, setIsOpen] = useState(false);

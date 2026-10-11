@@ -1,4 +1,4 @@
-import AdditionalWeatherCard from './AdditionalWeather/AdditionalWeatherCard';
+import AdditionalWeatherCard from './AdditionalWeatherCard';
 
 export default function AdditionalWeatherInfo({ weather }) {
   return (

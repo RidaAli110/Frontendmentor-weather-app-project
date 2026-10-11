@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import dropdownIcon from '../assets/images/icon-dropdown.svg';
-import DaysMenu from './Hourly Forecast and Day Select Button/DaysMenu';
+import dropdownIcon from '../../assets/images/icon-dropdown.svg';
+import DaysMenu from './DaysMenu';
 import HourlyForecastCard from './HourlyForecastCard';
-import getWeatherCodeIcon from '../utils/getWeatherCodeIcon';
+import getWeatherCodeIcon from '../../utils/getWeatherCodeIcon';
 
 export default function HourlyForecast({ weather }) {
   const [isOpen, setIsOpen] = useState(false);

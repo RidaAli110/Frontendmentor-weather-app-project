@@ -1,6 +1,5 @@
 import DailyForecastCard from './DailyForecastCard';
-import getWeatherCodeIcon from '../utils/getWeatherCodeIcon';
-
+import getWeatherCodeIcon from '../../utils/getWeatherCodeIcon';
 export default function DailyForecast({ weather }) {
   return (
     <>
