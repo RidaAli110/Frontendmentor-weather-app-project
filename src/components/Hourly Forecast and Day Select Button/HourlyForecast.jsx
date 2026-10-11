@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import dropdownIcon from '../assets/images/icon-dropdown.svg';
-import DaysMenu from './DaysMenu';
+import DaysMenu from './Hourly Forecast and Day Select Button/DaysMenu';
 import HourlyForecastCard from './HourlyForecastCard';
 import getWeatherCodeIcon from '../utils/getWeatherCodeIcon';
 

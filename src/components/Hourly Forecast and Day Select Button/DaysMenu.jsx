@@ -13,7 +13,8 @@ export default function DaysMenu({
     >
       {weather?.daily?.time.map((day) => {
         return (
-          <DaysMenuButton key={day}
+          <DaysMenuButton
+            key={day}
             setIsOpen={setIsOpen}
             selectedDay={selectedDay}
             setSelectedDay={setSelectedDay}
