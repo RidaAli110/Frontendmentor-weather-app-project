@@ -8,6 +8,7 @@ export default function DaysMenu({
 }) {
   return (
     <div
+      id='days-menu'
       className='absolute top-full sm:right-0  flex flex-col gap-2 p-2 mt-3 w-40
       border border-(--unit-border) bg-(--btn-card-bg) rounded-md'
     >

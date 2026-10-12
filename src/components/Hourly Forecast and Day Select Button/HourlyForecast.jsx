@@ -60,6 +60,21 @@ export default function HourlyForecast({ weather }) {
     };
   }, [isOpen]);
 
+  // This is for closing the menu when pressing escape
+  useEffect(() => {
+    function handleEscape(e) {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
+
   return (
     <section className=' h-175 overflow-y-auto p-5 mt-10 lg:mt-0  bg-(--btn-card-bg) rounded-2xl'>
       <div className='flex gap-1 flex-col sm:flex-row  justify-between'>
@@ -68,8 +83,9 @@ export default function HourlyForecast({ weather }) {
         </h5>
         <div ref={daysRef} className='relative'>
           <button
+            type='button'
             aria-expanded={isOpen}
-            aria-label={`Select a day, currently it is ${selectedDay}`}
+            aria-label={`Choose forecast day. Currently selected: ${selectedDay}`}
             onClick={() => {
               setIsOpen(!isOpen);
             }}
@@ -81,6 +97,7 @@ export default function HourlyForecast({ weather }) {
           </button>
           {isOpen && (
             <DaysMenu
+              aria-controls='days-menu'
               weather={weather}
               setIsOpen={setIsOpen}
               selectedDay={selectedDay}
@@ -103,7 +120,7 @@ export default function HourlyForecast({ weather }) {
                 hour: 'numeric',
                 hour12: true,
               })}
-              temp={Math.round(hour?.temperature)}
+              temp={`${Math.round(hour?.temperature)}°`}
             />
           );
         })}

@@ -4,7 +4,7 @@ import searchIcon from '../assets/images/icon-search.svg';
 export default function Input({ setLocation }) {
   const [input, setInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  // This state is for whichever search suggestion is clicked. 
+  // This state is for whichever search suggestion is clicked.
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   // Close suggestions when clicking outside
@@ -37,8 +37,22 @@ export default function Input({ setLocation }) {
     if (input.trim() !== '') {
       fetchLocation(input);
     }
-
   }, [input]);
+
+  // This is for closing the menu when pressing escape
+  useEffect(() => {
+    function handleEscape(e) {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
 
   return (
     <>
@@ -68,9 +82,12 @@ export default function Input({ setLocation }) {
             onChange={(e) => {
               const value = e.target.value;
               setInput(value);
+              setSelectedLocation(null);
               setIsOpen(true);
             }}
             onFocus={() => setIsOpen(true)}
+            aria-expanded={isOpen && suggestions.length > 0}
+            aria-controls='location-suggestions'
             className='search-input w-full md:w-80 lg:w-110'
             id='searchInput'
             type='text'
@@ -79,6 +96,7 @@ export default function Input({ setLocation }) {
 
           {isOpen && suggestions.length > 0 && (
             <div
+              id='location-suggestions'
               className='absolute top-full left-0 z-1 p-2 mt-2 border border-(--unit-border)
               w-full flex flex-col bg-(--light-grey-card-bg) rounded-md'
             >

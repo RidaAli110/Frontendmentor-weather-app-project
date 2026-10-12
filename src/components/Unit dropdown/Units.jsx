@@ -22,11 +22,28 @@ export default function Units({units, setUnits}) {
     };
   }, [isOpen]);
 
+  // This is for closing the menu when pressing escape
+  useEffect(() => {
+  function handleEscape(e) {
+    if (e.key === 'Escape') {
+      setIsOpen(false);
+    }
+  }
+
+  document.addEventListener('keydown', handleEscape);
+
+  return () => {
+    document.removeEventListener('keydown', handleEscape);
+  };
+}, []);
+
   return (
     <div ref={unitsRef} className='relative ml-auto'>
       <button
+      type='button'
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
+        aria-controls="units-menu"
         className=' flex items-center gap-2 px-2 py-1.5 rounded-sm
       bg-(--btn-card-bg) text-(--text-white) text-sm hover:bg-(--hover-btn)'
       >

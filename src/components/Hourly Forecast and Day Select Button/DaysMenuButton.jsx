@@ -6,6 +6,8 @@ export default function DaysMenuButton({
 }) {
   return (
     <button
+      aria-pressed={selectedDay === children}
+      type="button"
       onClick={() => {
         setSelectedDay(children);
         setIsOpen(false);

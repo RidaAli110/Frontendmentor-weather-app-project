@@ -1,6 +1,6 @@
 export default function WeatherSkeletonLoading() {
   return (
-    <div className='grid lg:grid-cols-[2fr_1fr] lg:gap-8'>
+    <div className='grid lg:grid-cols-[2fr_1fr] lg:col-span-2 lg:gap-8 '>
       {/* Left area*/}
       <div className='flex flex-col gap-6'>
         {/* Today's weather */}

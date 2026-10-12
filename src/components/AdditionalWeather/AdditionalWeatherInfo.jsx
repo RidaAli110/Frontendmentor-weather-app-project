@@ -1,6 +1,6 @@
 import AdditionalWeatherCard from './AdditionalWeatherCard';
 
-export default function AdditionalWeatherInfo({ weather }) {
+export default function AdditionalWeatherInfo({ weather, units }) {
   return (
     <section className='  mt-4 lg:mt-8 '>
       <dl
@@ -9,7 +9,7 @@ export default function AdditionalWeatherInfo({ weather }) {
       >
         <AdditionalWeatherCard
           text={'Feels Like'}
-          number={Math.round(weather?.current.apparent_temperature)}
+          number={`${Math.round(weather?.current.apparent_temperature)}°`}
         />
         <AdditionalWeatherCard
           text='Humidity'
@@ -17,11 +17,11 @@ export default function AdditionalWeatherInfo({ weather }) {
         />
         <AdditionalWeatherCard
           text='Wind'
-          number={Math.round(weather?.current.wind_speed_10m)}
+          number={`${Math.round(weather?.current.wind_speed_10m)} ${units.windSpeed}`}
         />
         <AdditionalWeatherCard
           text='Precipitation'
-          number={Math.round(weather?.current.precipitation)}
+          number={`${Math.round(weather?.current.precipitation)} ${units.precipitation}`}
         />
       </dl>
     </section>

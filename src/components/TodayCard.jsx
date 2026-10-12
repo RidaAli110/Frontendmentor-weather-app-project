@@ -38,7 +38,7 @@ export default function TodayCard({ weather, location }) {
             alt={weatherIcon.description}
           />
           <p className='text-(--text-white) text-8xl italic font-medium'>
-            {Math.round(weather?.current.temperature_2m)}
+            {`${Math.round(weather?.current.temperature_2m)}°`}
           </p>
         </div>
       </div>

@@ -85,7 +85,7 @@ function App() {
               <>
                 <div>
                   <TodayCard location={location} weather={weather} />
-                  <AdditionalWeatherInfo weather={weather} />
+                  <AdditionalWeatherInfo units={units} weather={weather} />
                   <DailyForecast weather={weather} />
                 </div>
                 <div>
@@ -101,5 +101,3 @@ function App() {
 }
 
 export default App;
-
-// add some sr-only headers
