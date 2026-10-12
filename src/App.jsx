@@ -9,18 +9,43 @@ import WeatherSkeletonLoading from './components/WeatherSkeletonLoading';
 import ErrorState from './components/ErrorState';
 
 function App() {
-  const [location, setLocation] = useState({
-    name: 'London',
-    country: 'England',
-    latitude: 51.5074,
-    longitude: -0.1278,
+  const [location, setLocation] = useState(() => {
+    const savedLocation = localStorage.getItem('weatherLocation');
+
+    if (savedLocation) {
+      return JSON.parse(savedLocation);
+    }
+    return {
+      name: 'London',
+      country: 'England',
+      latitude: 51.5074,
+      longitude: -0.1278,
+    };
   });
+
+  useEffect(() => {
+    localStorage.setItem('weatherLocation', JSON.stringify(location));
+  }, [location]);
+
   const [weather, setWeather] = useState(null);
-  const [units, setUnits] = useState({
-    temperature: 'Celsius',
-    windSpeed: 'km/h',
-    precipitation: 'mm',
+
+  const [units, setUnits] = useState(() => {
+    const savedUnits = localStorage.getItem('weatherUnits');
+
+    if (savedUnits) {
+      return JSON.parse(savedUnits);
+    }
+
+    return {
+      temperature: 'Celsius',
+      windSpeed: 'km/h',
+      precipitation: 'mm',
+    };
   });
+  useEffect(() => {
+    localStorage.setItem('weatherUnits', JSON.stringify(units));
+  }, [units]);
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
@@ -39,8 +64,9 @@ function App() {
     async function fetchWeather(latitude, longitude) {
       try {
         setIsLoading(true);
-        
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,precipitation,weather_code&timezone=auto&temperature_unit=${apiTemperatureUnit}&wind_speed_unit=${apiWindSpeedUnit}&precipitation_unit=${apiPrecipitationUnit}`,
+
+        const res = await fetch(
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=weather_code,temperature_2m_max,temperature_2m_min&hourly=temperature_2m,weather_code&current=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m,precipitation,weather_code&timezone=auto&temperature_unit=${apiTemperatureUnit}&wind_speed_unit=${apiWindSpeedUnit}&precipitation_unit=${apiPrecipitationUnit}`,
         );
         if (!res.ok) {
           throw new Error('Failed to fetch weather');
