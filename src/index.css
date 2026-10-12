@@ -30,6 +30,9 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-button, input {
+button,
+input {
   cursor: pointer;
 }
+
+
