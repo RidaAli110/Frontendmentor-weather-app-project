@@ -14,8 +14,8 @@ export default function TodayCard({ weather, location }) {
         className=' absolute inset-0 flex flex-col items-center justify-center
       gap-3 sm:flex-row sm:justify-between sm:mx-10 '
       >
-        <div className='flex  flex-col gap-3 '>
-          <p className='text-(--text-white) text-center sm:text-start text-3xl font-semibold'>
+        <div className='flex  flex-col gap-3 mt-5 sm:mt-0 '>
+          <p className='text-(--text-white) text-center sm:text-start sm:text-2xl  text-3xl font-semibold'>
             {`${location?.name}, ${location?.country}`}
           </p>
           <p className='text-(--text-grey) text-center sm:text-start  '>
