@@ -3,13 +3,16 @@ import getWeatherCodeIcon from '../../utils/getWeatherCodeIcon';
 export default function DailyForecast({ weather }) {
   return (
     <>
-      <h3 className='text-(--text-white) text-2xl font-medium mt-8 lg:mt-13'>
-        Daily forecast
-      </h3>
       <section
         aria-labelledby='daily-forecast-heading'
         className='grid grid-cols-3 lg:grid-cols-7 gap-5 lg:gap-3 mt-5'
       >
+        <h2
+          id='daily-forecast-heading'
+          className='col-span-full text-(--text-white) text-2xl font-medium mt-7 lg:mt-10 lg:mb-3'
+        >
+          Daily forecast
+        </h2>
         {weather?.daily?.time?.map((day, index) => {
           const weatherIcon = getWeatherCodeIcon(
             weather.daily.weather_code[index],

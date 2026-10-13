@@ -8,10 +8,10 @@ export default function Header({ units, setUnits}) {
         <img className='w-28 md:w-45 ' src={logo} alt='' />
         <Units units={units} setUnits={setUnits} />
       </nav>
-      <h2 className='text-(--text-white) font-(family-name:--bricolage-font) font-semibold
+      <h1 className='text-(--text-white) font-(family-name:--bricolage-font) font-semibold
       text-3xl md:text-4xl lg:text-5xl text-center mt-10'>
         How's the sky looking today?
-      </h2>
+      </h1>
     </header>
   );
 }

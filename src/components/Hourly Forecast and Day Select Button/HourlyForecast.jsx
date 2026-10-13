@@ -78,9 +78,9 @@ export default function HourlyForecast({ weather }) {
   return (
     <section className=' h-175 overflow-y-auto p-5 mt-10 lg:mt-0  bg-(--btn-card-bg) rounded-2xl'>
       <div className='flex gap-1 flex-col sm:flex-row  justify-between'>
-        <h5 className='text-(--text-white) text-2xl font-medium '>
+        <h2 className='text-(--text-white) text-2xl font-medium '>
           Hourly forecast
-        </h5>
+        </h2>
         <div ref={daysRef} className='relative'>
           <button
             type='button'

@@ -104,7 +104,6 @@ function App() {
         />
       ) : (
         <main>
-          <h1 className='sr-only'>Today's Weather</h1>
           <Input
             noResults={noResults}
             setNoResults={setNoResults}
