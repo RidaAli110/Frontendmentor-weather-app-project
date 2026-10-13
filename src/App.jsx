@@ -3,11 +3,11 @@ import Header from './components/Header';
 import Input from './components/Input';
 import TodayCard from './components/TodayCard';
 import AdditionalWeatherInfo from './components/AdditionalWeather/AdditionalWeatherInfo';
-import DailyForecast from './components/Daily Forecast/DailyForecast';
-import HourlyForecast from './components/Hourly Forecast and Day Select Button/HourlyForecast';
-import WeatherSkeletonLoading from './components/WeatherSkeletonLoading';
-import ErrorState from './components/ErrorState';
-import NoResults from './components/NoResults';
+import DailyForecast from './components/daily-Forecast/DailyForecast';
+import HourlyForecast from './components/Hourly-Forecast-and-Day-Select-Button/HourlyForecast';
+import WeatherSkeletonLoading from './components/ui-states/WeatherSkeletonLoading';
+import ErrorState from './components/ui-states/ErrorState';
+import NoResults from './components/ui-states/NoResults';
 
 function App() {
   const [location, setLocation] = useState(() => {

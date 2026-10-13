@@ -1,5 +1,5 @@
-import errorIcon from '../assets/images/icon-error.svg';
-import retryIcon from '../assets/images/icon-retry.svg';
+import errorIcon from '../../assets/images/icon-error.svg';
+import retryIcon from '../../assets/images/icon-retry.svg';
 export default function ErrorState({onRetry}) {
   return (
     <div className='flex flex-col items-center gap-8 mt-10 md:mt-15 '>

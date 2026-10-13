@@ -1,5 +1,5 @@
 import logo from '../assets/images/logo.svg';
-import Units from './Unit dropdown/Units';
+import Units from './Units-dropdown/Units';
 
 export default function Header({ units, setUnits}) {
   return (
