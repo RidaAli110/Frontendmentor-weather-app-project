@@ -96,39 +96,37 @@ function App() {
   return (
     <div className='mx-5 my-5  md:mx-8 lg:mx-15 '>
       <Header units={units} setUnits={setUnits} />
+      <Input
+        noResults={noResults}
+        setNoResults={setNoResults}
+        setLocation={setLocation}
+      />
       {error ? (
         <ErrorState
           onRetry={() => {
             setRetryCount((count) => count + 1);
           }}
         />
+      ) : noResults ? (
+        <NoResults />
       ) : (
         <main>
-          <Input
-            noResults={noResults}
-            setNoResults={setNoResults}
-            setLocation={setLocation}
-          />
-          {noResults ? (
-            <NoResults />
-          ) : (
-            <div className='grid lg:grid-cols-[2fr_1fr] lg:gap-8'>
-              {isLoading ? (
-                <WeatherSkeletonLoading />
-              ) : (
-                <>
-                  <div>
-                    <TodayCard location={location} weather={weather} />
-                    <AdditionalWeatherInfo units={units} weather={weather} />
-                    <DailyForecast weather={weather} />
-                  </div>
-                  <div>
-                    <HourlyForecast weather={weather} />
-                  </div>
-                </>
-              )}
-            </div>
-          )}
+          <div className='grid lg:grid-cols-[2fr_1fr] lg:gap-8'>
+            {isLoading ? (
+              <WeatherSkeletonLoading />
+            ) : (
+              <>
+                <div>
+                  <TodayCard location={location} weather={weather} />
+                  <AdditionalWeatherInfo units={units} weather={weather} />
+                  <DailyForecast weather={weather} />
+                </div>
+                <div>
+                  <HourlyForecast weather={weather} />
+                </div>
+              </>
+            )}
+          </div>
         </main>
       )}
     </div>
