@@ -22,7 +22,7 @@ export default function WeatherSkeletonLoading() {
       </div>
 
       {/*Hourly forecast */}
-      <div className='h-full min-h-96 mt-5 rounded-xl bg-(--btn-card-bg)' />
+      <div className='h-full min-h-96 mt-10 lg:mt-0  rounded-xl bg-(--btn-card-bg)' />
     </div>
   );
 }

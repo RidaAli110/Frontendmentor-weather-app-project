@@ -7,6 +7,7 @@ import DailyForecast from './components/Daily Forecast/DailyForecast';
 import HourlyForecast from './components/Hourly Forecast and Day Select Button/HourlyForecast';
 import WeatherSkeletonLoading from './components/WeatherSkeletonLoading';
 import ErrorState from './components/ErrorState';
+import NoResults from './components/NoResults';
 
 function App() {
   const [location, setLocation] = useState(() => {
@@ -49,6 +50,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
+  const [noResults, setNoResults] = useState(false);
 
   // This are the units converted to match the units requires for the api URL
   let apiTemperatureUnit = units.temperature.toLowerCase();
@@ -103,23 +105,31 @@ function App() {
       ) : (
         <main>
           <h1 className='sr-only'>Today's Weather</h1>
-          <Input setLocation={setLocation} />
-          <div className='grid lg:grid-cols-[2fr_1fr] lg:gap-8'>
-            {isLoading ? (
-              <WeatherSkeletonLoading />
-            ) : (
-              <>
-                <div>
-                  <TodayCard location={location} weather={weather} />
-                  <AdditionalWeatherInfo units={units} weather={weather} />
-                  <DailyForecast weather={weather} />
-                </div>
-                <div>
-                  <HourlyForecast weather={weather} />
-                </div>
-              </>
-            )}
-          </div>
+          <Input
+            noResults={noResults}
+            setNoResults={setNoResults}
+            setLocation={setLocation}
+          />
+          {noResults ? (
+            <NoResults />
+          ) : (
+            <div className='grid lg:grid-cols-[2fr_1fr] lg:gap-8'>
+              {isLoading ? (
+                <WeatherSkeletonLoading />
+              ) : (
+                <>
+                  <div>
+                    <TodayCard location={location} weather={weather} />
+                    <AdditionalWeatherInfo units={units} weather={weather} />
+                    <DailyForecast weather={weather} />
+                  </div>
+                  <div>
+                    <HourlyForecast weather={weather} />
+                  </div>
+                </>
+              )}
+            </div>
+          )}
         </main>
       )}
     </div>

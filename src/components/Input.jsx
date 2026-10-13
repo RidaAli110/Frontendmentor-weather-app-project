@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import searchIcon from '../assets/images/icon-search.svg';
 
-export default function Input({ setLocation }) {
+export default function Input({ setLocation, noResults, setNoResults }) {
   const [input, setInput] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   // This state is for whichever search suggestion is clicked.
@@ -59,8 +59,11 @@ export default function Input({ setLocation }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (!selectedLocation) return;
-          setLocation(selectedLocation);
+          const match = selectedLocation ?? suggestions[0];
+          if (!match) return setNoResults(true);
+          setLocation(match);
+          setNoResults(false);
+          setIsOpen(false);
         }}
         className='flex flex-col min-[30rem]:flex-row justify-center gap-2.5 mt-10 mb-10'
       >
@@ -78,12 +81,14 @@ export default function Input({ setLocation }) {
           </label>
 
           <input
+            noResults={noResults}
             value={input}
             onChange={(e) => {
               const value = e.target.value;
               setInput(value);
               setSelectedLocation(null);
               setIsOpen(true);
+              setNoResults(false);
             }}
             onFocus={() => setIsOpen(true)}
             aria-expanded={isOpen && suggestions.length > 0}
