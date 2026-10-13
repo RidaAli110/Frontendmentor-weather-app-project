@@ -20,7 +20,7 @@ export default function DaysMenu({
             selectedDay={selectedDay}
             setSelectedDay={setSelectedDay}
           >
-            {new Date(day).toLocaleDateString('en-GB', {
+            {new Date(`${day}T12:00:00`).toLocaleDateString('en-GB', {
               weekday: 'long',
             })}
           </DaysMenuButton>
